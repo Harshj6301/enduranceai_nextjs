@@ -21,7 +21,7 @@ export default function Home() {
          <Navbar /> 
       </header>
 
-      <div className="hero-section bg-center relative bg-cover" style={{ backgroundImage: "url('/Assets/bg/nebula.jpg')" }}>
+      <div className="hero-section bg-center relative bg-cover" style={{ backgroundImage: "url('/assets/bg/nebula.jpg')" }}>
         <div className="overlay"></div>
         <div className="hero-content text-center text-white relative z-10 p-20">
           <span className="glow">
