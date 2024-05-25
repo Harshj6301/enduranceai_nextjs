@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* styles/globals.css */
+@font-face {
+  font-family: 'Logirent';
+  src: url('/assets/fonts/Logirent.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Solaris';
+  src: url('/assets/fonts/Solaris.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Quantify';
+  src: url('/assets/fonts/Quantify.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cat';
+  src: url('/assets/fonts/CATNorth.ttf') format('truetype');
+}
+
+body {
+  font-family: 'Quantify', sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: 'Logirent', sans-serif;
+  font-size: 1.5em;
+  margin-right: 10px;
+}
+
+h2 {
+  font-family: 'monospace', sans-serif;
+}
+
+h3, h4, p {
+  font-family: 'Cat', monospace;
+}
+
+
+/* hero section */
+.hero-section {
+  position: relative;
+  height: 500px; /* Adjust hero section height as needed */
+  background-size: cover;
+  background-position: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+}
+
+/* Glow text*/
+.glow {
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 3px #fff; /* white glow */
+  }
+  to {
+    text-shadow: 0 0 30px #fff; /* Increased glow */
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero-section h1 {
+  opacity: 0;
+  animation: fadeIn 3s ease forwards;
+}
